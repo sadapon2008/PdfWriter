@@ -77,7 +77,7 @@ public class PdfWriter {
             CSVReader reader = new CSVReader(inReader,'\t','"',1);
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
-                if(nextLine.length > 2) {
+                if(nextLine.length >= 2) {
                     parameters.put(nextLine[0], nextLine[1]);
                 }
             }
