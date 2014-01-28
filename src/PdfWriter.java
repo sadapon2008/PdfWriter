@@ -83,6 +83,8 @@ public class PdfWriter {
             }
             reader.close();            
         } catch(Exception e) {
+        	System.out.println("error in parsing paramcsv");
+        	System.out.println(e.toString());
             System.exit(1);
         }
         
@@ -106,6 +108,8 @@ public class PdfWriter {
             // PDFファイルを出力
             JasperExportManager.exportReportToPdfFile(jasperPrint, filename_pdf);
         } catch (Exception e) {
+        	System.out.println("error in processing jrxml");
+        	System.out.println(e.toString());
             System.exit(1);
         }
     }
