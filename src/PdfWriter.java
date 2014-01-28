@@ -74,7 +74,7 @@ public class PdfWriter {
         try {
             FileInputStream input=new FileInputStream(filename_paramcsv);
             InputStreamReader inReader=new InputStreamReader(input, "UTF-8");
-            CSVReader reader = new CSVReader(inReader,'\t','"',1);
+            CSVReader reader = new CSVReader(inReader,',','"',1);
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 if(nextLine.length >= 2) {
@@ -99,7 +99,7 @@ public class PdfWriter {
             // 行の区切りはLF
             JRCsvDataSource ds = new JRCsvDataSource(filename_datacsv, "UTF-8");
             ds.setUseFirstRowAsHeader(true);
-            ds.setFieldDelimiter('\t');
+            ds.setFieldDelimiter(',');
             ds.setRecordDelimiter("\n");
             
             // ドキュメントを生成
